@@ -1,4 +1,4 @@
-# Porkbun IPU pdater
+# Porkbun IP Updater
 
 Porkbun IP Updater - Version 1.0
 
