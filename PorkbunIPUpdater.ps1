@@ -127,7 +127,7 @@ $script:UseBasic = @{UseBasicParsing=$true}
 
 $RequestBody = "{`"secretapikey`": `"$PorkbunSecretKey`", `"apikey`": `"$PorkbunAPIKey`"}"
 $queryParams = @{
-                 Uri = "https://porkbun.com/api/json/v3/ping"
+                 Uri = "https://api.porkbun.com/api/json/v3/ping"
                  Method = 'POST'
                  Body = $RequestBody
                  ErrorAction = 'Stop'
@@ -140,7 +140,7 @@ $wip = $response.yourIp
 # -----------------------
 
 $queryParams = @{
-                 Uri = "https://porkbun.com/api/json/v3/dns/retrieveByNameType/$PorkbunDomain/$PorkbunType/$PorkbunSubdomain"
+                 Uri = "https://api.porkbun.com/api/json/v3/dns/retrieveByNameType/$PorkbunDomain/$PorkbunType/$PorkbunSubdomain"
                  Method = 'POST'
                  Body = $RequestBody
                  ErrorAction = 'Stop'
@@ -176,7 +176,7 @@ else {
 if ($wip -ne $dip) {
 	$RequestBody = "{`"secretapikey`": `"$PorkbunSecretKey`", `"apikey`": `"$PorkbunAPIKey`", `"content`": `"$wip`", `"ttl`": `"$PorkbunTTL`"}"
 	$queryParams = @{
-			 Uri = "https://porkbun.com/api/json/v3/dns/editByNameType/$PorkbunDomain/$PorkbunType/$PorkbunSubdomain"
+			 Uri = "https://api.porkbun.com/api/json/v3/dns/editByNameType/$PorkbunDomain/$PorkbunType/$PorkbunSubdomain"
 			 Method = 'POST'
 			 Body = $RequestBody
 			 ErrorAction = 'Stop'
